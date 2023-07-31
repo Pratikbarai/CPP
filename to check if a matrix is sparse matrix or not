@@ -32,4 +32,5 @@ int main()
         cout<<"sparse Matrix"<<endl;
     else
         cout<<"not sparse Matrix"<<endl;
+    return 0;
 }

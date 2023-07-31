@@ -3,9 +3,9 @@
 using namespace std;
 int main()
 {   int row,column,i,j;
-    cout<<"enter total number of row: ";
+    cout<<"enter total number of row: "<<endl;
     cin>>row;
-    cout<<"enter total number of column: ";
+    cout<<"enter total number of column: "<<endl;
     cin>>column;
     int array[row][column];
     for(i=0;i<row;i++)
@@ -29,7 +29,7 @@ int main()
             }
     b=row*column*(2.0/3.0);
     if(count_zero>b)
-        cout<<"sparse Matrix";
+        cout<<"sparse Matrix"<<endl;
     else
-        cout<<"not sparse Matrix";
+        cout<<"not sparse Matrix"<<endl;
 }

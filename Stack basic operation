@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+
+# define MAXSIZE 5
+
+class stack {
+    int array[MAXSIZE]; // Changed from array[MAXSIZE-1]
+    int top; // Removed 'k' and 'i' declarations
+public:
+    stack() {
+        top = -1; // Initialize 'top' in the constructor
+    }
+    
+    void push(int n) {
+        if (top == MAXSIZE - 1) {
+            cout << "Insertion not possible" << endl;
+        } else {
+            top++; // Increment 'top'
+            array[top] = n; // Assign 'n' to the array at 'top'
+        }
+    }
+    
+    void pop() {
+        if (top == -1) {
+            cout << "Stack is empty" << endl;
+        } else {
+            cout << "Popped element: " << array[top] << endl;
+            top--; // Decrement 'top'
+        }
+    }
+    
+    void display() {
+        if (top == -1) {
+            cout << "Stack is empty" << endl;
+        } else {
+            cout << "Stack elements: ";
+            for (int i = 0; i <= top; i++) {
+                cout << array[i] << " ";
+            }
+            cout << endl;
+        }
+    }
+}; 
+
+int main() {
+    stack obs; // Create an object of the 'stack' class
+    int value, choice;
+    while (true) {
+        cout << "Press 1 to push" << endl
+             << "Press 2 to pop" << endl
+             << "Press 3 to display" << endl
+             << "Press 4 to exit" << endl;
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                cout << "Enter the value: ";
+                cin >> value;
+                obs.push(value);
+                break;
+            case 2:
+                obs.pop();
+                break;
+            case 3:
+                obs.display();
+                break;    
+            case 4:
+                exit(0); // Provide an exit status
+            default:
+                cout << "Invalid input" << endl;
+        }
+    }
+    return 0;
+}

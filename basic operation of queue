@@ -4,33 +4,33 @@ using namespace std;
 #define maxsize 5
 
 class queue {
-    int top, rear, front, arr[maxsize]; // Rear and front were switched, and a missing data member 'rear' was added
+    int top, rear, front, arr[maxsize]; 
 public:
-    queue() { // Constructor was missing
+    queue() { 
         top = -1;
         rear = -1;
         front = 0;
     }
 
     bool isEmpty() {
-        if (top == -1 && rear == -1) // Logical condition was incorrect
+        if (top == -1 && rear == -1) 
             return true;
         else
-            return false; // Missing semicolon
+            return false; 
     }
 
     bool isfull() {
         if (rear == maxsize - 1)
             return true;
         else
-            return false; // Missing semicolon
+            return false; 
     }
 
     void enqueue(int k) {
         if (isfull())
             cout << "insert not possible";
         else {
-            if (front == -1 && rear == -1) { // Corrected the condition
+            if (front == -1 && rear == -1) { 
                 front = 0;
                 rear = 0;
                 arr[rear] = k;
@@ -38,14 +38,14 @@ public:
             else {
                 rear++;
                 arr[rear] = k;
-                cout << "item inserted"; // Missing semicolon
+                cout << "item inserted"; 
             }
         }
     }
 
-    void dequeue() { // Changed 'delete' to 'dequeue' to avoid conflict with C++ keyword
+    void dequeue() { 
         if (isEmpty())
-            cout << "underflow"; // Changed 'overflow' to 'underflow'
+            cout << "underflow"; 
         else {
             if (rear == top && top != -1 && rear != -1)
                 cout << "delete not possible";
@@ -60,7 +60,7 @@ public:
         if (isEmpty())
             cout << "underflow" << endl;
         else {
-            for (int i = top; i <= rear; i++) // Changed 'i++' to 'i++'
+            for (int i = top; i <= rear; i++) 
                 cout << arr[i] << " ";
         }
     }
@@ -75,11 +75,11 @@ int main() {
         switch (choice) {
         case 1:
             cout << "enter element to be inserted\n";
-            cin >> element; // Changed '<<' to '>>'
+            cin >> element; 
             obj.enqueue(element);
             break;
         case 2:
-            obj.dequeue(); // Changed function name from 'delete' to 'dequeue'
+            obj.dequeue(); 
             break;
         case 3:
             obj.display();
